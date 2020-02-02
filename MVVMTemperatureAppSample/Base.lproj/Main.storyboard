@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Temperature View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="TemperatureViewController" customModule="MVVMTemperatureAppSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2g6-n5-cdq">
+                                <rect key="frame" x="140.5" y="44" width="133" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XbG-Qc-5vn">
+                                <rect key="frame" x="82" y="133" width="250" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Temperature Is:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSR-Q6-P6T">
+                                        <rect key="frame" x="0.0" y="0.0" width="196" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 °C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5B-FZ-mag">
+                                        <rect key="frame" x="216" y="0.0" width="34" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Temperature" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DGb-FT-prR">
+                                <rect key="frame" x="133" y="431" width="148" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ojn-dg-FyI">
+                                <rect key="frame" x="117" y="485" width="180" height="30"/>
+                                <color key="backgroundColor" red="0.26824162097389725" green="0.84776226129798649" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="g4R-xt-Haa"/>
+                                </constraints>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Change Temperature"/>
+                                <connections>
+                                    <action selector="updateTemperature" destination="BYZ-38-t0r" eventType="touchUpInside" id="iz0-yv-FOb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="XbG-Qc-5vn" firstAttribute="top" secondItem="2g6-n5-cdq" secondAttribute="bottom" constant="68.5" id="5gR-TZ-k5s"/>
+                            <constraint firstItem="2g6-n5-cdq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="74J-HP-g2h"/>
+                            <constraint firstItem="DGb-FT-prR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Ii-Oj-cKo"/>
+                            <constraint firstItem="XbG-Qc-5vn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G8u-h4-eZs"/>
+                            <constraint firstItem="2g6-n5-cdq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LBa-03-jQV"/>
+                            <constraint firstItem="Ojn-dg-FyI" firstAttribute="top" secondItem="DGb-FT-prR" secondAttribute="bottom" constant="20" id="Nqb-gr-LAw"/>
+                            <constraint firstItem="DGb-FT-prR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ghW-Js-VFR"/>
+                            <constraint firstItem="Ojn-dg-FyI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nDd-PK-rnT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="tempLbl" destination="v5B-FZ-mag" id="8kf-3B-mXZ"/>
+                        <outlet property="tempTxt" destination="DGb-FT-prR" id="Hc4-Ia-C9g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="110"/>
+        </scene>
+    </scenes>
+</document>
